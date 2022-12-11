@@ -96,16 +96,17 @@ def go_left():
 screen = turtle.Screen()
 screen.setup(w, h)
 screen.title("Snake")
-screen.bgcolor("blue")
+screen.bgcolor("black")
 screen.setup(500, 500)
 screen.tracer(0)
 
 pen = turtle.Turtle("square")
+pen.color("red")
 pen.penup()
 
 food = turtle.Turtle()
 food.shape("square")
-food.color("orange")
+food.color("pink")
 food.shapesize(food_size / 20)
 food.penup()
 
