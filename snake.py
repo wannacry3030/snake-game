@@ -7,7 +7,7 @@ food_size = 10
 delay = 100
 
 offsets = {
-    "up": (0. 20),
+    "up": (0, 20),
     "down": (0, -20),
     "left": (-20, 0),
     "right": (20, 0)
@@ -28,7 +28,7 @@ def move_snake():
     new_head[0] = snake[-1][0] + offsets[snake_dir][0]
     new_head[1] = snake[-1][1] + offsets[snake_dir][1]
     
-    if new_head in snake[-1]:
+    if new_head in snake[:-1]:
         reset()
     else:
         snake.append(new_head)
@@ -96,11 +96,11 @@ def go_left():
 screen = turtle.Screen()
 screen.setup(w, h)
 screen.title("Snake")
-screen.bgcolor("black")
+screen.bgcolor("blue")
 screen.setup(500, 500)
 screen.tracer(0)
 
-pen = turtle.Turtle()
+pen = turtle.Turtle("square")
 pen.penup()
 
 food = turtle.Turtle()
