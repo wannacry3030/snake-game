@@ -6,6 +6,7 @@ w = 1000
 h = 800
 food_size = 20
 delay = 100
+turtle.register_shape("body.gif")
 
 #definindo direções dos controles
 offsets = {
@@ -102,16 +103,15 @@ screen = turtle.Screen()
 screen.setup(w, h)
 screen.title("Snake")
 screen.bgcolor('#ACD473')
-screen.setup(w, h)
 screen.tracer(0)
 
-pen = turtle.Turtle("square")
-pen.color("#373635")
+pen = turtle.Turtle()
+pen.shape("body.gif")
 pen.penup()
 
 food = turtle.Turtle()
-food.shape("square")
-food.color("pink")
+food.shape("circle")
+food.color("#57871D")
 food.shapesize(food_size / 20)
 food.penup()
 
