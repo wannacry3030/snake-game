@@ -4,8 +4,9 @@ import sys
 
 pygame.init()
 
-sw = 640
-sh = 460
+#largura e altura tem q ser divisivel por 20
+sw = 600
+sh = 600
 screen = pygame.display.set_mode((sw,sh))
 
 BLACK = (0,0,0)
@@ -80,10 +81,7 @@ while True:
             snake.key_event(event)
             
     snake.move()
-    head_x, head_y = snake.positions[0]
-    food_x, food_y = food.position
-    if head_x == food_x and head_y == food_y:
-        print('colisao')
+    if snake.positions[0] == food.position:
         snake.length += 1
         snake.score += 1
         food.randomize_position()
